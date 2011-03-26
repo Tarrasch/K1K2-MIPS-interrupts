@@ -13,6 +13,7 @@ main:
 		li		a0, 0
 loop:
 		jal		print_number
+		jal		delay
 		addi	a0, 1
 		j	    loop
 
