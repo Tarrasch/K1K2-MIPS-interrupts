@@ -1,0 +1,7 @@
+*.o
+*.out
+*.srec
+*.pdb
+*.mip
+*.swp
+
