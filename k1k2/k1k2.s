@@ -41,7 +41,7 @@ print_number:
 		sw		a0, 8(sp)		# save $a0
 		
 		# First, print number using syscall 1 (a0 already contains number)
-		li		v0, 1
+		li		v0, 100
 		syscall
 		
 		# Then print new line using syscall 4
