@@ -11,7 +11,10 @@ main:
 		addiu	sp, sp, -24		# allocate stack frame
 		sw		ra, 16(sp)		# save return address
 		li		a0, 0
+loop:
 		jal		print_number
+		addi	a0, 1
+		j	    loop
 
 #
 # Put your program here
