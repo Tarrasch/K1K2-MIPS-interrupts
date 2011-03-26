@@ -62,7 +62,7 @@ print_number:
 		.text
 		.globl delay
 delay:
-		li		t0, 1000		# Do many iterations
+		li		t0, 50000		# Do many iterations
 dloop:	addi	t0, t0, -1
 		bnez	t0, dloop
 		jr		ra
