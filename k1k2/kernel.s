@@ -319,6 +319,7 @@ __syscall:
 		#beq	v0, 15, __write 		#$a0 = file descriptor, $a1 = buffer, $a2 = length num chars written (in $a0)
 		#beq	v0, 16, __close 		#$a0 = file descriptor
 		#beq	v0, 17, __exit2
+		beq		v0, 100, __ret_twice	#char (in $a0)
 		
 		b		__not_handled
 
@@ -449,6 +450,23 @@ __read_char:
 		sw		a0, __s_a0
 
 		b		__ret
+
+###########################################################################
+# __ret_twice (syscall 100): 
+#
+# Returns: v0 = twice a0
+
+__ret_twice:
+
+		jal     getchar
+		nop
+		
+		move	a0, v0
+		sw		a0, __s_a0
+
+		b		__ret
+
+
 
 # End of trap handler
 ###########################################################################
