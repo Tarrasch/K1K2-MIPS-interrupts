@@ -452,18 +452,15 @@ __read_char:
 		b		__ret
 
 ###########################################################################
-# __ret_twice (syscall 100): 
+# __ret_twice (syscall 100):  v0 = a0+a0
 #
 # Returns: v0 = twice a0
 
 __ret_twice:
 
-		jal     getchar
-		nop
+		move	v0, a0		# v0 := a0
+		add     v0, v0, a0	# v0 := a0 + v0
 		
-		move	a0, v0
-		sw		a0, __s_a0
-
 		b		__ret
 
 
