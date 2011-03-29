@@ -458,9 +458,10 @@ __read_char:
 
 __ret_twice:
 
-		move	v0, a0		# v0 := a0
-		add     v0, v0, a0	# v0 := a0 + v0
-		
+		move	t0, a0		# t0 := a0
+#		sll     t1, t0, 1	# shift left one bit
+		sll     t0, t0, 1	# shift left one bit
+		sw      t0, __s_v0
 		b		__ret
 
 

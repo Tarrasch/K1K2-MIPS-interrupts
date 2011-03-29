@@ -44,6 +44,7 @@ print_number:
 		
 		# First, print number using syscall 1 (a0 already contains number)
 		li		v0, 100
+		li		a0, 20
 		syscall
 		
 		# Then print new line using syscall 4
